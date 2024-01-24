@@ -1,5 +1,6 @@
 import random
 
+#PS es puntos en salud
 jugador = [100, 100]  # Jugador: [PS, defensa]
 oponente = [100, 0]  # Oponente: [PS, defensa]
 
@@ -11,13 +12,13 @@ ataques = [
 ]
 
 while jugador[0] > 0 and oponente[0] > 0:
-    # Turno del jugador
-    ataque_jugador = input("Elige un ataque (malicioso, placaje, ascuas): ").lower()
+    ataque_jugador = input("ataque: (malicioso, placaje, ascuas): ").lower()
     ataque_encontrado = None
     for ataque in ataques:
         if ataque[0] == ataque_jugador:
             ataque_encontrado = ataque
             break
+
     if ataque_encontrado:
         oponente[1] -= ataque_encontrado[1]
         if oponente[1] <= 0:
